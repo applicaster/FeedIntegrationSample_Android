@@ -25,16 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
+        // Setting the feed button view as the action view to the menu item
         MenuItem item = menu.findItem(R.id.feed_menu_button);
-
         FeedButtonView feedButtonView = new FeedButtonView(this);
-
-        feedButtonView.setLayoutParams(new RelativeLayout.LayoutParams(55,55));
-
-        feedButtonView.setPadding(5,0,5,0);
-
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(55,55);
+        params.setMarginEnd(25);
+        feedButtonView.setLayoutParams(params);
         item.setActionView(feedButtonView);
-
         return true;
     }
 }

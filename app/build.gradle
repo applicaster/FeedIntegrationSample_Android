@@ -18,6 +18,11 @@ android {
         }
     }
 
+    /*
+     Solves issue with duplicate files copied in APK META-INF/LICENSE
+     on the Jackson library
+     Issue: https://github.com/FasterXML/jackson-core/issues/240
+     */
     packagingOptions {
         pickFirst 'META-INF/LICENSE.txt'
         pickFirst 'META-INF/LICENSE'
@@ -30,10 +35,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile 'com.facebook.android:facebook-android-sdk:4.19.0'
-    compile 'com.applicaster:feed_android:3.11.0'
-    compile 'com.nhaarman.listviewanimations:library:2.5.2@aar'
-    compile 'com.daimajia.androidanimations:library:1.0.6@aar'
-    compile 'com.daimajia.easing:library:1.0.0@aar'
+    compile 'com.applicaster:feed_android:3.11.1'
     testCompile 'junit:junit:4.12'
 }

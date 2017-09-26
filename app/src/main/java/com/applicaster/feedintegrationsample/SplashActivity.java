@@ -20,7 +20,7 @@ public class SplashActivity extends AppIntroActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        // loading Applicaster's application data
+        // Loads Applicaster's application data
         APAccountLoader applicasterAccountLoader = new APAccountLoader(new ApplicasterAccountLoaderListener(this),
                 AppData.getProperty(APProperties.ACCOUNT_ID_KEY));
         applicasterAccountLoader.loadBean();
@@ -34,7 +34,7 @@ public class SplashActivity extends AppIntroActivity {
         if (requestCode == UrlSchemeUtil.FEED_REQUEST_CODE) {
             onIntroFinished();
         }
-        // handle returning from  Crossmates screen launched by Url Scheme(use if implementing Crossmates)
+        // handle returning from  Crossmates screen launched by Url Scheme(used only if implementing Crossmates)
         if (requestCode == UrlSchemeUtil.CROSSMATES_REQUEST_CODE) {
             onIntroFinished();
         }
